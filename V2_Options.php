@@ -8,7 +8,7 @@ add_action('admin_init', 'V2Plugin_admin_init');
 add_action( 'admin_menu', 'V2Plugin_menu' );
 //Initialize Plugin
 function V2Plugin_admin_init(){
-//Register V2Plugin_plugin_options (ID = "V2Plugin_plugin_options") setting in options.php, validate before updating
+register_setting( 'V2Plugin_plugin_options', 'V2Plugin_plugin_options', 'V2Plugin_plugin_options_validate');
 add_settings_section('V2Plugin_Settings', 'Vision2 Settings', 'V2Plugin_Settings_Text', 'Vision2');
 add_settings_field('V2Plugin_API_URL', 'Vision2 API URL', 'V2Plugin_API_URL_Text', 'Vision2', 'V2Plugin_Settings');
 }
@@ -23,7 +23,7 @@ function V2Plugin_API_URL_Text() {
 	//retrieve current V2Plugin_plugin_options settings set by user, if any
 	$options = get_option('V2Plugin_plugin_options');
 	//instructions
-	echo "<h3>Vision2 API URL</h3><p><b>Required Field.</b>Please input your Vision2 API. Contact your Vision2 represenative for more information. ";
+	echo "<h3>Vision2 API URL</h3><p><b>Required Field.</b> Please input your Vision2 API. Contact your Vision2 represenative for more information. ";
 	//input (with current outputs already displayed)
 	echo "<input id='V2Plugin_API_URL' name='V2Plugin_plugin_options[V2Plugin_API_URL]' type='text' value='{$options['V2Plugin_API_URL']}' />";
 }
@@ -61,4 +61,14 @@ function V2Plugin_Settings() {
     </div>
     <?php
 }
+function Vision2_admin_notice() {
+	$bosa_options = get_option('BOSA_plugin_options');
+        /* Check that the user hasn't already clicked to ignore the message */
+	if (!isset($V2Plugin_options['V2Plugin_API_URL' ] )) {
+        echo '<div class="updated"><p>';
+        echo 'Vision2 is not ready. <a href="options-general.php?page=V2Settings.php">update add you Vision2 API URL</a>.';
+        echo "</p></div>";
+	}
+}
+?>
 ?>
