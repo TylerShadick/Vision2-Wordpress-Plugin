@@ -62,7 +62,7 @@ function V2Plugin_Settings() {
 <?php
 }
 function Vision2_admin_notice() {
-	$bosa_options = get_option('BOSA_plugin_options');
+	$Vision2_options = get_option('V2Plugin_plugin_options');
         /* Check that the user hasn't already clicked to ignore the message */
 	if (!isset($V2Plugin_options['V2Plugin_API_URL' ] )) {
         echo '<div class="updated"><p>';
