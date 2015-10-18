@@ -23,25 +23,22 @@ function V2Plugin_API_URL_Text() {
 	//retrieve current V2Plugin_plugin_options settings set by user, if any
 	$options = get_option('V2Plugin_plugin_options');
 	//instructions
-	echo "<h3>Vision2 API URL</h3><p><b>Required Field.</b> Please input your Vision2 API. Contact your Vision2 represenative for more information. ";
+	echo "<h3>Vision2 API URL</h3><p><b>Required Field.</b> Please enter the subdomain of your Vision2 API. For example: https://<b>subdomiain</b>.V2sapi.co";
 	//input (with current outputs already displayed)
 	echo "<input id='V2Plugin_API_URL' name='V2Plugin_plugin_options[V2Plugin_API_URL]' type='text' value='{$options['V2Plugin_API_URL']}' />";
 }
 //Validate if a V2 site
-function contains_link($text) {
-        return preg_match("/(^(https?:\/\/(?:www\.)?|(?:www\.))?|\s(https?:\/\/(?:www\.)?|(?:www\.))?)v2api\.co/", $text);
-}
 // validate our fields before updating options.php
 function V2Plugin_plugin_options_validate($input) {
-//check for valid UA format (UA-XXXXXXXX-Y) note: there has to be at least 1 Y digits
-if(contains_link($input['V2Plugin_API_URL'])) {
+//Can only be alphanumeric
+if(ctype_alnum($input['V2Plugin_API_URL'])) {
 	//set output variable to our input values
 	$output = $input;
 }
 else
 		{
 		//Invalid tracking code: set error
-		add_settings_error( 'V2Plugin_plugin_options', false, 'The API URL appears to be invalid. Please input a Vision2 API URL.', 'error' );
+		add_settings_error( 'V2Plugin_plugin_options', false, 'The subdomain must be alphanumeric and cannot contain symbols.', 'error' );
 		//return original values, discard changes
 return get_option('V2Plugin_plugin_options');
 		}
