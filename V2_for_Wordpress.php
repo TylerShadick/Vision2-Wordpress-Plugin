@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Vision2 for Wordpress
- * Plugin URI: https://github.com/TylerShadick
+ * Plugin URI: https://github.com/TylerShadick/Vision2-Wordpress-Plugin
  * Description: Extends Wordpress with Vision2 Functionality
  * Version: 1.0
  * Author: Tyler Shadick
