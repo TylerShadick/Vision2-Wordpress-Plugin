@@ -37,7 +37,8 @@ function V2Plugin_plugin_options_validate($input) {
 if(contains_link($input['V2Plugin_API_URL'])) {
 	//set output variable to our input values
 	$output = $input;
-		else
+}
+else
 		{
 		//Invalid tracking code: set error
 		add_settings_error( 'V2Plugin_plugin_options', false, 'The API URL appears to be invalid. Please input a Vision2 API URL.', 'error' );
@@ -46,7 +47,6 @@ return get_option('V2Plugin_plugin_options');
 		}
 
 	return $output;
-}
 }
 //This function echoes the option sections and fields for Vision2 Settings. V2Plugin_menu() calls this function using add_options_page
 function V2Plugin_Settings() {
