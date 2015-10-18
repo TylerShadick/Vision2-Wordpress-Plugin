@@ -12,7 +12,7 @@
 //include( plugin_dir_path( __FILE__ ) . 'V2_Options.php');
 //Assistance from http://scribu.net/wordpress/optimal-script-loading.html
 class Vision2_Shortcode {
-	static $add_v2_script;
+	static $add_script;
 
 	static function init() {
 		add_shortcode('Vision2', array(__CLASS__, 'Vision2_func'));
