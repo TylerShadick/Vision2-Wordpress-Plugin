@@ -30,7 +30,7 @@ class Vision2{
             }
 	static function register_script() {
     //Insert Script, If Function Present
-    if(isset($V2Plugin_options['V2Plugin_API_URL'])
+    if(isset($V2Plugin_options['V2Plugin_API_URL']))
        {
     wp_register_script('vision2_api', $V2Plugin_options['V2Plugin_API_URL']);	}
        }
