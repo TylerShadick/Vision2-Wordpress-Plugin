@@ -19,7 +19,7 @@ function V2Plugin_menu() {
 function V2Plugin_Settings_Text() {
  echo "This page is used to set global Wordpress settings for Vision2";
 }
-function V2Plugin_Text() {
+function V2Plugin_Settings_Text() {
 	//retrieve current V2Plugin_plugin_options settings set by user, if any
 	$options = get_option('V2Plugin_plugin_options');
 	//instructions
