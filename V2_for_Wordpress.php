@@ -30,11 +30,13 @@ class Vision2{
             }
 	static function register_script() {
     //Insert Script, If Function Present
-        //Using JQUERY as test
+    if(isset($V2Plugin_options['V2Plugin_API_URL'])
+       {
     wp_register_script('vision2_api', $V2Plugin_options['V2Plugin_API_URL']);	}
+       }
 
 	static function print_script() {
-		if ( ! self::$add_script )
+		if ( ! self::$add_script && isset($V2Plugin_options['V2Plugin_API_URL']) )
 			return;
 
 		wp_print_scripts('vision2_api');
