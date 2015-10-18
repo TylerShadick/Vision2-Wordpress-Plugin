@@ -15,26 +15,19 @@ class Vision2{
 	static $add_script;
 
 	static function init() {
-		add_shortcode('Vision2', array(__CLASS__, 'Vision2_func'));
+		add_shortcode('Vision2', array(__CLASS__, 'handle_shortcode'));
 		add_action('init', array(__CLASS__, 'register_script'));
 		add_action('wp_footer', array(__CLASS__, 'print_script'));
 	}
 
 	static function handle_shortcode($atts) {
 		self::$add_script = true;
-        //Start Shorcode Handling
-            //[Vision2 module="MODULE HERE" opts="OPTIONS HERE"]
-            function Vision2_func( $atts ) 
-            {
                 $a = shortcode_atts( array(
                 'module' => 'profile',
                 'opts' => '',
                 ), $atts );
                 return "<div class='v2 v2Module' data-module='{$a["module"]}'' data-opts='{$a["opts"]}'></div>";
             }
-        //End Shortcode Handling
-	}
-
 	static function register_script() {
     //Insert Script, If Function Present
         //Using JQUERY as test
