@@ -31,13 +31,13 @@ class Vision2{
 	static function register_script() {
     //Insert Script, If Function Present
         //Using JQUERY as test
-    wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', false, '1.3.2');	}
+    wp_register_script('vision2_api', 'https://cflcn.v2sapi.co/script/APIScript?includeDemoCss=true');	}
 
 	static function print_script() {
 		if ( ! self::$add_script )
 			return;
 
-		wp_print_scripts('jquery');
+		wp_print_scripts('vision2_api');
 	}
 }
 Vision2::init();
