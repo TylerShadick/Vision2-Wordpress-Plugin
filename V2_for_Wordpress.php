@@ -26,7 +26,14 @@ class Vision2{
                 'module' => 'profile',
                 'opts' => '',
                 ), $atts );
-                return '<div class="v2 v2Module" data-module="{$a["module"]}" data-opts="{{$a["opts"]}}"></div>';
+        if(isset$a['opts'])
+        {
+                return '<div class="v2 v2Module" data-module="'. $a["module"] .'" data-opts="{'. $a["opts"] . '"}></div>';
+        }
+        else
+        {
+        return '<div class="v2 v2Module" data-module="'. $a["module"] .'"></div>';
+        }
             }
 	static function register_script() {
     //Insert Script, If Function Present
