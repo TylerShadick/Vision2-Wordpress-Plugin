@@ -23,7 +23,7 @@ function V2Plugin_API_URL_Text() {
 	//retrieve current V2Plugin_plugin_options settings set by user, if any
 	$options = get_option('V2Plugin_plugin_options');
 	//instructions
-	echo "<h3>Vision2 API URL</h3><p><b>Required Field.</b> Please enter the subdomain of your Vision2 API. For example: https://<b>subdomiain</b>.V2sapi.co";
+	echo "<h3>Vision2 API Subdomain</h3><p><b>Required Field.</b> Please enter the subdomain of your Vision2 API. For example: https://<b>subdomain</b>.V2sapi.co";
 	//input (with current outputs already displayed)
 	echo "<input id='V2Plugin_API_URL' name='V2Plugin_plugin_options[V2Plugin_API_URL]' type='text' value='{$options['V2Plugin_API_URL']}' />";
 }
