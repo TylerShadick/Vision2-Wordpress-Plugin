@@ -15,7 +15,7 @@ class Vision2_Shortcode {
 	static $add_v2_script;
 
 	static function init() {
-		add_v2_shortcode('V2shortcode', array(__CLASS__, 'handle_v2_shortcode'));
+		add_v2_shortcode('Vision2', array(__CLASS__, 'handle_v2_shortcode'));
 
 		add_action('init', array(__CLASS__, 'register_script'));
 		add_action('wp_footer', array(__CLASS__, 'print_script'));
