@@ -3,7 +3,7 @@
  * Plugin Name: Vision2 for Wordpress
  * Plugin URI: https://github.com/TylerShadick
  * Description: Extends Wordpress with Vision2 Functionality
- * Version: 0.1
+ * Version: 1.0
  * Author: Tyler Shadick
  * Author URI: http://www.tylershadick.com
  * License: GPL2
@@ -28,11 +28,14 @@ class Vision2{
                 ), $atts );
         if(isset($a['opts']))
         {
+            //If they added parenthesis, let's just remove them to be safe.
                 $a['opts'] = str_replace(array( '{', '}' ), '', $a['opts']);
+            //Include Opts
                 return '<div class="v2 v2Module" data-module="'. $a["module"] .'" data-opts="{'. $a["opts"] . '}"></div>';
         }
         else
         {
+            //No Opts
         return '<div class="v2 v2Module" data-module="'. $a["module"] .'"></div>';
         }
             }
@@ -48,7 +51,7 @@ class Vision2{
         $V2Plugin_plugin_options = get_option('V2Plugin_plugin_options');
 		if ( ! self::$add_script && isset($V2Plugin_plugin_options['V2Plugin_API_URL']) )
 			return;
-
+        //Fires only is shortcode is present
 		wp_print_scripts('vision2_api');
 	}
 }
