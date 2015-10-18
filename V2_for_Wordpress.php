@@ -28,7 +28,7 @@ class Vision2{
                 ), $atts );
         if(isset($a['opts']))
         {
-                return '<div class="v2 v2Module" data-module="'. $a["module"] .'" data-opts="{'. $a["opts"] . '"}></div>';
+                return '<div class="v2 v2Module" data-module="'. $a["module"] .'" data-opts="{'. $a["opts"] . '}"></div>';
         }
         else
         {
