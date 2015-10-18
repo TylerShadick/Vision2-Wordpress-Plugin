@@ -36,7 +36,7 @@ class Vision2{
        }
 
 	static function print_script() {
-		if ( ! self::$add_script && isset($V2Plugin_options['V2Plugin_API_URL']) )
+		if ( ! self::$add_script && isset($V2Plugin_plugin_options['V2Plugin_API_URL']) )
 			return;
 
 		wp_print_scripts('vision2_api');

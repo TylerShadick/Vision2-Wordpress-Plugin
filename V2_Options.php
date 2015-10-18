@@ -62,7 +62,7 @@ add_action('admin_notices', 'Vision2_admin_notice');
 function Vision2_admin_notice() {
 	$Vision2_options = get_option('V2Plugin_plugin_options');
         /* Check that the user hasn't already clicked to ignore the message */
-	if (!isset($V2Plugin_options['V2Plugin_API_URL' ] )) {
+	if (!isset($V2Plugin_plugin_options['V2Plugin_API_URL' ] )) {
         echo '<div class="updated"><p>';
         echo 'Vision2 is not ready. <a href="options-general.php?page=V2Settings.php">update add you Vision2 API URL</a>.';
         echo "</p></div>";
