@@ -2,15 +2,15 @@
 /**
  * Plugin Name: Vision2 for Wordpress
  * Plugin URI: https://github.com/TylerShadick
- * Description: Extends Wordpress with V2 Functionality
+ * Description: Extends Wordpress with Vision2 Functionality
  * Version: 0.1
  * Author: Tyler Shadick
  * Author URI: http://www.tylershadick.com
  * License: GPL2
  */
+//Thanks to Scribu for the help - http://scribu.net/wordpress/optimal-script-loading.html
 //Include V2 Options File
-//include( plugin_dir_path( __FILE__ ) . 'V2_Options.php');
-//Assistance from http://scribu.net/wordpress/optimal-script-loading.html
+include( plugin_dir_path( __FILE__ ) . 'V2_Options.php');
 class Vision2{
 	static $add_script;
 
@@ -31,7 +31,7 @@ class Vision2{
 	static function register_script() {
     //Insert Script, If Function Present
         //Using JQUERY as test
-    wp_register_script('vision2_api', 'https://cflcn.v2sapi.co/script/APIScript?includeDemoCss=true');	}
+    wp_register_script('vision2_api', $V2Plugin_options['V2Plugin_API_URL']);	}
 
 	static function print_script() {
 		if ( ! self::$add_script )
