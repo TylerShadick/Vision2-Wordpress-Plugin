@@ -36,6 +36,7 @@ class Vision2{
        }
 
 	static function print_script() {
+        $V2Plugin_plugin_options = get_option('V2Plugin_plugin_options');
 		if ( ! self::$add_script && isset($V2Plugin_plugin_options['V2Plugin_API_URL']) )
 			return;
 

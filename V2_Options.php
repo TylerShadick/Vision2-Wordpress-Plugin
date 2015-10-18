@@ -60,7 +60,7 @@ function V2Plugin_Settings() {
 }
 add_action('admin_notices', 'Vision2_admin_notice');
 function Vision2_admin_notice() {
-	$Vision2_options = get_option('V2Plugin_plugin_options');
+	$V2Plugin_plugin_options = get_option('V2Plugin_plugin_options');
         /* Check that the user hasn't already clicked to ignore the message */
 	if (!isset($V2Plugin_plugin_options['V2Plugin_API_URL' ] )) {
         echo '<div class="updated"><p>';
