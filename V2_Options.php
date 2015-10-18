@@ -59,7 +59,6 @@ function V2Plugin_Settings() {
     <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
     </form>
     </div>
-    <?php
 }
 function Vision2_admin_notice() {
 	$bosa_options = get_option('BOSA_plugin_options');
@@ -70,5 +69,4 @@ function Vision2_admin_notice() {
         echo "</p></div>";
 	}
 }
-?>
 ?>
