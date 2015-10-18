@@ -48,3 +48,4 @@ class Vision2_Shortcode {
 		wp_print_scripts('Vision2-script');
 	}
 }
+Vision2_Shortcode::init();
