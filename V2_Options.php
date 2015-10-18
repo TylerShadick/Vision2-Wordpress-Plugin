@@ -10,13 +10,13 @@ add_action( 'admin_menu', 'V2Plugin_menu' );
 function V2Plugin_admin_init(){
 //Register V2Plugin_plugin_options (ID = "V2Plugin_plugin_options") setting in options.php, validate before updating
 add_settings_section('V2Plugin_Settings', 'Vision2 Settings', 'V2Plugin_Settings_Text', 'Vision2');
-add_settings_field('V2Plugin_API_URL', 'Vision2 API URL', 'V2Plugin_API_URL_Text', 'Vision2', 'V2Plugin_Settings');
+add_settings_field('V2Plugin_API_URL', 'Vision2 API URL', 'V2Plugin_API_URL', 'Vision2', 'V2Plugin_Settings');
 }
 //Add Vision2 Settings menu to Wordpress admin menu for administrators, create the page "V2Settings.php"
 function V2Plugin_menu() {
 	add_options_page( 'Vision2 Settings', 'Vision2 Settings', 'administrator', 'V2Settings.php', 'V2Plugin_Settings' );
 }
-function V2Plugin_Text() {
+function V2Plugin_Settings_Text() {
  echo "This page is used to set global Wordpress settings for Vision2";
 }
 function V2Plugin_Text() {
@@ -25,7 +25,7 @@ function V2Plugin_Text() {
 	//instructions
 	echo "<h3>Vision2 API URL</h3><p><b>Required Field.</b>Please input your Vision2 API. Contact your Vision2 represenative for more information. ";
 	//input (with current outputs already displayed)
-	echo "<input id='V2Plugin_API_URL' name='V2Plugin_plugin_options[V2Plugin_API_URL]' size='15' type='text' value='{$options['V2Plugin_API_URL']}' />";
+	echo "<input id='V2Plugin_API_URL' name='V2Plugin_plugin_options[V2Plugin_API_URL]' type='text' value='{$options['V2Plugin_API_URL']}' />";
 }
 //Validate if a V2 site
 function contains_link($text) {
