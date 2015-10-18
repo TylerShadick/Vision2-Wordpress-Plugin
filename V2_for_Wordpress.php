@@ -11,12 +11,11 @@
 //Include V2 Options File
 //include( plugin_dir_path( __FILE__ ) . 'V2_Options.php');
 //Assistance from http://scribu.net/wordpress/optimal-script-loading.html
-class Vision2_Shortcode {
+class Vision2{
 	static $add_script;
 
 	static function init() {
 		add_shortcode('Vision2', array(__CLASS__, 'Vision2_func'));
-
 		add_action('init', array(__CLASS__, 'register_script'));
 		add_action('wp_footer', array(__CLASS__, 'print_script'));
 	}
@@ -38,14 +37,14 @@ class Vision2_Shortcode {
 
 	static function register_script() {
     //Insert Script, If Function Present
-		wp_register_script('Vision2-script', '//cflcn.v2sapi.co/script/APIScript?includeDemoCss=true');
-	}
+        //Using JQUERY as test
+    wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', false, '1.3.2');	}
 
 	static function print_script() {
 		if ( ! self::$add_script )
 			return;
 
-		wp_print_scripts('Vision2-script');
+		wp_print_scripts('jquery');
 	}
 }
-Vision2_Shortcode::init();
+Vision2::init();
