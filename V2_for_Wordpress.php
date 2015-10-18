@@ -26,7 +26,7 @@ class Vision2{
                 'module' => 'profile',
                 'opts' => '',
                 ), $atts );
-        if(isset($a['opts'])
+        if(isset($a['opts']))
         {
                 return '<div class="v2 v2Module" data-module="'. $a["module"] .'" data-opts="{'. $a["opts"] . '"}></div>';
         }
