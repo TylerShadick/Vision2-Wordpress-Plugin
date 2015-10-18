@@ -33,7 +33,7 @@ class Vision2{
          $V2Plugin_plugin_options = get_option('V2Plugin_plugin_options');
     if(isset($V2Plugin_plugin_options['V2Plugin_API_URL']))
        {
-    wp_register_script('vision2_api', 'https://'. $V2Plugin_plugin_options['V2Plugin_API_URL'] .'v2sapi.co/script/APIScript?includeDemoCss=true');	}
+    wp_register_script('vision2_api', 'https://'. $V2Plugin_plugin_options['V2Plugin_API_URL'] .'.v2sapi.co/script/APIScript?includeDemoCss=true');	}
        }
 
 	static function print_script() {
