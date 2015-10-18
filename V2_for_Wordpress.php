@@ -26,7 +26,7 @@ class Vision2{
                 'module' => 'profile',
                 'opts' => '',
                 ), $atts );
-                return '<div class="v2 v2Module" data-module="'{$a["module"]}'" data-opts="'{$a["opts"}'"></div>';
+                return '<div class="v2 v2Module" data-module="'{$a["module"]}'" data-opts="{'{$a["opts"]}'}"></div>';
             }
 	static function register_script() {
     //Insert Script, If Function Present
