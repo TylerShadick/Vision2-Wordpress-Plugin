@@ -58,6 +58,7 @@ function V2Plugin_Settings() {
     </div>
 <?php
 }
+add_action('admin_notices', 'Vision2_admin_notice');
 function Vision2_admin_notice() {
 	$Vision2_options = get_option('V2Plugin_plugin_options');
         /* Check that the user hasn't already clicked to ignore the message */
