@@ -10,7 +10,7 @@ add_action( 'admin_menu', 'V2Plugin_menu' );
 function V2Plugin_admin_init(){
 //Register V2Plugin_plugin_options (ID = "V2Plugin_plugin_options") setting in options.php, validate before updating
 add_settings_section('V2Plugin_Settings', 'Vision2 Settings', 'V2Plugin_Settings_Text', 'Vision2');
-add_settings_field('V2Plugin_API_URL', 'Vision2 API URL', 'V2Plugin_API_URL', 'Vision2', 'V2Plugin_Settings');
+add_settings_field('V2Plugin_API_URL', 'Vision2 API URL', 'V2Plugin_API_URL_Text', 'Vision2', 'V2Plugin_Settings');
 }
 //Add Vision2 Settings menu to Wordpress admin menu for administrators, create the page "V2Settings.php"
 function V2Plugin_menu() {
