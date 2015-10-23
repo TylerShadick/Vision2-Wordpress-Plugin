@@ -25,7 +25,16 @@ class Vision2{
                 $a = shortcode_atts( array(
                 'module' => 'profile',
                 'opts' => '',
+                'siteid' => '',
                 ), $atts );
+        if(isset($a['siteid']) && ctype_alnum($a['siteid']))
+        {
+            self::$add_siteid = '&v2wsid=' . $a['siteid'];
+        }
+        else
+        {
+            self::$add_siteid = '';
+        }
         if(isset($a['opts']))
         {
             //If they added parenthesis, let's just remove them to be safe.
