@@ -62,11 +62,11 @@ class Vision2{
 		if ( ! self::$add_script && isset($V2Plugin_plugin_options['V2Plugin_API_URL']) )
 			return;
         //Fires only is shortcode is present
-        if (isset (self::$add_siteid))
+		wp_enqueue_script('vision2_api');
+                if (isset (self::$add_siteid))
         {
         wp_localize_script( 'vision2_api', 'vm', array( 'SiteId' => self::$add_siteid ));
         }
-		wp_enqueue_script('vision2_api');
 	}
 }
 Vision2::init();
