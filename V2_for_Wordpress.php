@@ -30,7 +30,7 @@ class Vision2{
                 ), $atts );
         if(isset($a['siteid']) && ctype_alnum($a['siteid']))
         {
-            self::$add_siteid = $a['siteid'];
+            self::$add_siteid = '&V2wsid='$a['siteid'];
         }
         if(isset($a['opts']))
         {
@@ -50,7 +50,7 @@ class Vision2{
          $V2Plugin_plugin_options = get_option('V2Plugin_plugin_options');
     if(isset($V2Plugin_plugin_options['V2Plugin_API_URL']))
        {
-    wp_register_script('vision2_api', 'https://'. $V2Plugin_plugin_options['V2Plugin_API_URL'] .'.v2sapi.co/script/APIScript?includeDemoCss=true');	}
+    wp_register_script('vision2_api', 'https://'. $V2Plugin_plugin_options['V2Plugin_API_URL'] .'.v2sapi.co/script/APIScript?includeDemoCss=true' . self::$add_siteid);	}
        }
 
 	static function print_script() {
@@ -59,10 +59,6 @@ class Vision2{
 			return;
         //Fires only is shortcode is present
 		wp_enqueue_script('vision2_api');
-                if (isset (self::$add_siteid))
-        {
-        wp_localize_script( 'vision2_api', 'a', array( 'websiteId' => self::$add_siteid ));
-        }
 	}
 }
 Vision2::init();
