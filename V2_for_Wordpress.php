@@ -64,7 +64,7 @@ class Vision2{
         //Fires only is shortcode is present
         if (isset (self::$add_siteid))
         {
-        wp_localize_script( 'vision2_api', 'V2wsid', self::$add_siteid );
+        wp_localize_script( 'vision2_api', 'SiteId', self::$add_siteid );
         }
 		wp_enqueue_script('vision2_api');
 	}
