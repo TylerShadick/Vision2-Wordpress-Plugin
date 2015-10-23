@@ -4,7 +4,7 @@ Author Website: www.tylershadick.com
 Tags: V2, Integration, API
 Requires at least: 3.5
 Tested up to: 3.6.1
-Stable tag: 0.0
+Stable tag: 1.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ Useage Examples
 
 **<div class="v2 v2Module" data-module="profile" data-opts="{'showPaymentPermissions': true}"></div>**
 *  Use the shortcode [Vision2 module="profile" opts="'showPaymentPermissions': true"] in any WYSIWQIG or Text field in Wordpress. Be sure to include the single quotations for the data-opts field, wrapping the data-opts field in parenthesis is optional
+
+New in version 1.1 
+*  Optionally use [Vision2 siteid=“123“] to change sites. Can be used with module [Vision2 module=“profile” siteid=“123”]. One siteid per page, the last siteid will be used if multiple appear.
 
 Features of Vision2 for Wordpress:
 
