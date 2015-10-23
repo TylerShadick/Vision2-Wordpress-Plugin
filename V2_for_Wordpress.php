@@ -61,7 +61,7 @@ class Vision2{
         }
         else
         {
-            wp_enqueue_script('vision2_api', 'https://'. $V2Plugin_plugin_options['V2Plugin_API_URL'] .'.v2sapi.co/script/APIScript?includeDemoCss=true');
+            wp_enqueue_script('vision2_api');
         }
 	}
 }
