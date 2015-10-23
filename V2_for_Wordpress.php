@@ -32,10 +32,6 @@ class Vision2{
         {
             self::$add_siteid = $a['siteid'];
         }
-        else
-        {
-            self::$add_siteid = '';
-        }
         if(isset($a['opts']))
         {
             //If they added parenthesis, let's just remove them to be safe.
@@ -65,7 +61,7 @@ class Vision2{
 		wp_enqueue_script('vision2_api');
                 if (isset (self::$add_siteid))
         {
-        wp_localize_script( 'vision2_api', 'vm', array( 'SiteId' => self::$add_siteid ));
+        wp_localize_script( 'vision2_api', 'a', array( 'websiteId' => self::$add_siteid ));
         }
 	}
 }
