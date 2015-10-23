@@ -28,7 +28,7 @@ class Vision2{
                 ), $atts );
         if(isset($a['siteid']) && ctype_alnum($a['siteid']))
         {
-            self::$add_siteid = '&v2wsid='$a['siteid'];
+            self::$add_siteid = '&v2wsid=' . $a['siteid'];
         }
         if(isset($a['opts']))
         {
